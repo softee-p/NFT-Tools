@@ -54,6 +54,10 @@ for filename in os.listdir(folder_path):
         if 'properties' in data:
             data['properties'] = {}
         
+        # Modify the 'description' field
+        if 'description' in data:
+            data['description'] = "new description"
+        
         with open(file_path, 'w') as file:
             json.dump(data, file, indent=2)
         
